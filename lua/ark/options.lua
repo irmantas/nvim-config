@@ -1,5 +1,9 @@
 -- OPTIONS
 
+-- Color scheme
+vim.opt.termguicolors = true
+vim.cmd 'colorscheme gruvbox-baby'
+
 -- Clipboard (see :checkhealth for required and available clipboard managers)
 vim.opt.clipboard = "unnamedplus"
 

@@ -17,4 +17,7 @@ return require('packer').startup(function()
 
     -- Editorconfig file support
     use 'gpanders/editorconfig.nvim'
+
+    -- Color Schemes
+    use 'luisiacc/gruvbox-baby'
 end)
