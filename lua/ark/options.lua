@@ -14,6 +14,14 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- TODO tab size
+-- tab size
+vim.opt.tabstop = 4
+-- expand tab to spaces
+vim.opt.expandtab = true
+-- length tu use whern shifting text (0 for tabstop)
+vim.opt.shiftwidth = 0
+-- smart indentation for code block start
+vim.opt.smartindent = true
 
 -- AUTO COMMANDS
 

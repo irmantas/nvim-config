@@ -28,7 +28,7 @@ return require('packer').startup(function(use)
     -- TreeSitter
     use {
         'nvim-treesitter/nvim-treesitter',
-	run = ':TSUpdate'
+	    run = ':TSUpdate'
     }
 
     -- Editorconfig file support
