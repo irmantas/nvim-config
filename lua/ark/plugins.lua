@@ -41,6 +41,11 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
 	    run = ':TSUpdate'
     }
+    -- Telescope for file finging
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
     -- Editorconfig file support
     use 'gpanders/editorconfig.nvim'
     --< Editor behaviour
