@@ -41,6 +41,8 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
 	    run = ':TSUpdate'
     }
+    -- File explorer
+    use 'kyazdani42/nvim-tree.lua'
     -- Telescope for file finging
     use {
       'nvim-telescope/telescope.nvim',

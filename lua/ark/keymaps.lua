@@ -32,6 +32,8 @@ keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>",
 keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", opts)
 keymap("n", "<leader>gs", "<cmd>lua require('telescope.builtin').git_status()<CR>", opts)
 
+-- Nvim Tree
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
 
 --< PLUGINS
 

@@ -22,6 +22,8 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 -- do not wrap lines
 vim.opt.wrap = false
+-- global status line
+vim.opt.laststatus = 3
 --< Base options
 
 --> Searching
