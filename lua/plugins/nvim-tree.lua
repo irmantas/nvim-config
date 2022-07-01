@@ -3,24 +3,31 @@ if not status_ok then
     return
 end
 
-nvim_tree.setup{
+local status_ok, nvim_tree_config = pcall(require, 'nvim-tree.config')
+if not status_ok then
+    return
+end
+
+local tree_cb = nvim_tree_config.nvim_tree_callback
+
+nvim_tree.setup {
     auto_reload_on_write = true,
-      create_in_closed_folder = false,
-      disable_netrw = false,
-      hijack_cursor = false,
-      hijack_netrw = true,
-      hijack_unnamed_buffer_when_opening = false,
-      ignore_buffer_on_setup = false,
-      open_on_setup = false,
-      open_on_setup_file = false,
-      open_on_tab = false,
-      sort_by = "name",
-      root_dirs = {},
-      prefer_startup_root = false,
-      sync_root_with_cwd = false,
-      reload_on_bufenter = false,
-      respect_buf_cwd = false,
-      view = {
+    create_in_closed_folder = false,
+    disable_netrw = false,
+    hijack_cursor = false,
+    hijack_netrw = true,
+    hijack_unnamed_buffer_when_opening = false,
+    ignore_buffer_on_setup = false,
+    open_on_setup = false,
+    open_on_setup_file = false,
+    open_on_tab = false,
+    sort_by = "name",
+    root_dirs = {},
+    prefer_startup_root = false,
+    sync_root_with_cwd = false,
+    reload_on_bufenter = false,
+    respect_buf_cwd = false,
+    view = {
         adaptive_size = false,
         centralize_selection = false,
         width = 30,
@@ -32,13 +39,15 @@ nvim_tree.setup{
         relativenumber = false,
         signcolumn = "yes",
         mappings = {
-          custom_only = false,
-          list = {
-            -- user mappings go here
-          },
+            custom_only = false,
+            list = {
+                -- user mappings go here
+                { key = { 'l', '<CR>', 'o' }, cb = tree_cb 'edit' },
+                { key = { 'h', }, cb = tree_cb 'close_node' },
+            },
         },
-      },
-      renderer = {
+    },
+    renderer = {
         add_trailing = false,
         group_empty = false,
         highlight_git = false,
@@ -46,135 +55,135 @@ nvim_tree.setup{
         highlight_opened_files = "none",
         root_folder_modifier = ":~",
         indent_markers = {
-          enable = false,
-          icons = {
-            corner = "└ ",
-            edge = "│ ",
-            item = "│ ",
-            none = "  ",
-          },
+            enable = false,
+            icons = {
+                corner = "└ ",
+                edge = "│ ",
+                item = "│ ",
+                none = "  ",
+            },
         },
         icons = {
-          webdev_colors = true,
-          git_placement = "before",
-          padding = " ",
-          symlink_arrow = " ➛ ",
-          show = {
-            file = true,
-            folder = true,
-            folder_arrow = true,
-            git = true,
-          },
-          glyphs = {
-            default = "",
-            symlink = "",
-            folder = {
-              arrow_closed = "",
-              arrow_open = "",
-              default = "",
-              open = "",
-              empty = "",
-              empty_open = "",
-              symlink = "",
-              symlink_open = "",
+            webdev_colors = true,
+            git_placement = "before",
+            padding = " ",
+            symlink_arrow = " ➛ ",
+            show = {
+                file = true,
+                folder = true,
+                folder_arrow = true,
+                git = true,
             },
-            git = {
-              unstaged = "✗",
-              staged = "✓",
-              unmerged = "",
-              renamed = "➜",
-              untracked = "★",
-              deleted = "",
-              ignored = "◌",
+            glyphs = {
+                default = "",
+                symlink = "",
+                folder = {
+                    arrow_closed = "",
+                    arrow_open = "",
+                    default = "",
+                    open = "",
+                    empty = "",
+                    empty_open = "",
+                    symlink = "",
+                    symlink_open = "",
+                },
+                git = {
+                    unstaged = "✗",
+                    staged = "✓",
+                    unmerged = "",
+                    renamed = "➜",
+                    untracked = "★",
+                    deleted = "",
+                    ignored = "◌",
+                },
             },
-          },
         },
         special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
-      },
-      hijack_directories = {
+    },
+    hijack_directories = {
         enable = true,
         auto_open = true,
-      },
-      update_focused_file = {
+    },
+    update_focused_file = {
         enable = false,
         update_root = false,
         ignore_list = {},
-      },
-      ignore_ft_on_setup = {},
-      system_open = {
+    },
+    ignore_ft_on_setup = {},
+    system_open = {
         cmd = "",
         args = {},
-      },
-      diagnostics = {
+    },
+    diagnostics = {
         enable = false,
         show_on_dirs = false,
         icons = {
-          hint = "",
-          info = "",
-          warning = "",
-          error = "",
+            hint = "",
+            info = "",
+            warning = "",
+            error = "",
         },
-      },
-      filters = {
+    },
+    filters = {
         dotfiles = false,
         custom = {},
         exclude = {},
-      },
-      filesystem_watchers = {
+    },
+    filesystem_watchers = {
         enable = false,
         interval = 100,
         debounce_delay = 50,
-      },
-      git = {
+    },
+    git = {
         enable = true,
         ignore = true,
         timeout = 400,
-      },
-      actions = {
+    },
+    actions = {
         use_system_clipboard = true,
         change_dir = {
-          enable = true,
-          global = false,
-          restrict_above_cwd = false,
+            enable = true,
+            global = false,
+            restrict_above_cwd = false,
         },
         expand_all = {
-          max_folder_discovery = 300,
+            max_folder_discovery = 300,
         },
         open_file = {
-          quit_on_open = true,
-          resize_window = true,
-          window_picker = {
-            enable = true,
-            chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-            exclude = {
-              filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
-              buftype = { "nofile", "terminal", "help" },
+            quit_on_open = true,
+            resize_window = true,
+            window_picker = {
+                enable = true,
+                chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+                exclude = {
+                    filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+                    buftype = { "nofile", "terminal", "help" },
+                },
             },
-          },
         },
         remove_file = {
-          close_window = true,
+            close_window = true,
         },
-      },
-      trash = {
+    },
+    trash = {
         cmd = "gio trash",
         require_confirm = true,
-      },
-      live_filter = {
+    },
+    live_filter = {
         prefix = "[FILTER]: ",
         always_show_folders = true,
-      },
-      log = {
+    },
+    log = {
         enable = false,
         truncate = false,
         types = {
-          all = false,
-          config = false,
-          copy_paste = false,
-          diagnostics = false,
-          git = false,
-          profile = false,
-          watcher = false,
+            all = false,
+            config = false,
+            copy_paste = false,
+            diagnostics = false,
+            git = false,
+            profile = false,
+            watcher = false,
         },
-      },
+    },
 }
