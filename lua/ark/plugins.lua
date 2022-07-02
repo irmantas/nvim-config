@@ -16,8 +16,8 @@ end
 packer.init {
     display = {
         open_fn = function()
-	    return require("packer.util").float { border = "rounded" }
-	end,
+            return require("packer.util").float { border = "rounded" }
+        end,
     },
 }
 
@@ -39,14 +39,14 @@ return require('packer').startup(function(use)
     -- TreeSitter syntax highlighting
     use {
         'nvim-treesitter/nvim-treesitter',
-	    run = ':TSUpdate'
+        run = ':TSUpdate'
     }
     -- File explorer
     use 'kyazdani42/nvim-tree.lua'
     -- Telescope for file finging
     use {
-      'nvim-telescope/telescope.nvim',
-      requires = { {'nvim-lua/plenary.nvim'} }
+        'nvim-telescope/telescope.nvim',
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
     -- LSP
     use {
@@ -63,6 +63,9 @@ return require('packer').startup(function(use)
     -- Snippet engine with cmp support
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
+
+    -- Autopairing brackets
+    use 'windwp/nvim-autopairs'
 
     -- Editorconfig file support
     use 'gpanders/editorconfig.nvim'

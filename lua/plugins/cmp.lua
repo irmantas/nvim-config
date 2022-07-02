@@ -10,17 +10,28 @@ if not status_snip_ok then
     return
 end
 
+-- LSP shows errors without this. Its not required.
 if nil == cmp then
     return
 end
 
+-- to use <Tab> in completion omnibox
 local check_backspace = function()
     local col = vim.fn.col "." - 1
     return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
+-- load luasnip vscode loader
 require("luasnip/loaders/from_vscode").lazy_load()
 
+-- Hook to autopairs plugin
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
+
+-- Main CMP configuration
 cmp.setup {
     snippet = {
         expand = function(args)
