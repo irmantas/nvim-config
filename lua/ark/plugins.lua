@@ -48,6 +48,11 @@ return require('packer').startup(function(use)
       'nvim-telescope/telescope.nvim',
       requires = { {'nvim-lua/plenary.nvim'} }
     }
+    -- LSP
+    use {
+        'williamboman/nvim-lsp-installer',
+        'neovim/nvim-lspconfig',
+    }
     -- Editorconfig file support
     use 'gpanders/editorconfig.nvim'
     --< Editor behaviour

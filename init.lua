@@ -5,4 +5,5 @@ require 'ark.keymaps'
 
 -- plugin configs
 require 'plugins.treesitter'
+require 'plugins.lsp'
 require 'plugins.nvim-tree'

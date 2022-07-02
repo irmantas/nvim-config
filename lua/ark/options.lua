@@ -26,6 +26,8 @@ vim.opt.wrap = false
 vim.opt.laststatus = 3
 -- extra column on left for lsp/git/etc symbols
 vim.opt.signcolumn = "yes"
+-- for cmp plugin
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 --< Base options
 
 --> Searching
