@@ -11,6 +11,7 @@ M.servers = {
     "html", -- HTML
     "cssls", -- CSS (scss maybe? TODO: check if working)
     "jsonls", -- JSON
+    "denols",
 
     "pyright", -- Phyton
     "r_language_server", -- R
