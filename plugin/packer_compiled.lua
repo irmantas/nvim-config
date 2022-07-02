@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/irmantas/.local/share/nvim/site/pack/packer/start/editorconfig.nvim",
     url = "https://github.com/gpanders/editorconfig.nvim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/irmantas/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["gruvbox-baby"] = {
     loaded = true,
     path = "/home/irmantas/.local/share/nvim/site/pack/packer/start/gruvbox-baby",

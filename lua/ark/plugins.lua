@@ -67,6 +67,9 @@ return require('packer').startup(function(use)
     -- Autopairing brackets
     use 'windwp/nvim-autopairs'
 
+    -- Git status indicator
+    use 'lewis6991/gitsigns.nvim'
+
     -- Editorconfig file support
     use 'gpanders/editorconfig.nvim'
     --< Editor behaviour
