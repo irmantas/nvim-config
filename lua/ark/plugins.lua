@@ -76,6 +76,9 @@ return require('packer').startup(function(use)
     -- Show indentation lines
     use "lukas-reineke/indent-blankline.nvim"
 
+    -- Better status line
+    use 'nvim-lualine/lualine.nvim'
+
     -- Editorconfig file support
     use 'gpanders/editorconfig.nvim'
     --< Editor behaviour
