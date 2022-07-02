@@ -24,6 +24,8 @@ vim.opt.scrolloff = 8
 vim.opt.wrap = false
 -- global status line
 vim.opt.laststatus = 3
+-- extra column on left for lsp/git/etc symbols
+vim.opt.signcolumn = "yes"
 --< Base options
 
 --> Searching
@@ -37,7 +39,7 @@ vim.opt.clipboard = "unnamedplus"
 --< Clipboard
 
 --> Line numbers
--- Display numbers 
+-- Display numbers
 vim.opt.number = true
 -- Relative number
 vim.opt.relativenumber = true
@@ -59,7 +61,7 @@ vim.opt.smartindent = true
 -- Disable automatic comment leader after 'o' or 'O'
 -- requires autocommand because default runtime ftplugin overides it
 vim.api.nvim_create_autocmd("BufEnter", {
-    callback = function() 
+    callback = function()
         vim.opt.formatoptions = vim.opt.formatoptions - { "o" }
     end,
 })
