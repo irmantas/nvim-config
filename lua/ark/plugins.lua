@@ -70,6 +70,9 @@ return require('packer').startup(function(use)
     -- Git status indicator
     use 'lewis6991/gitsigns.nvim'
 
+    -- Comments plugin with treesitter support
+    use 'numToStr/Comment.nvim'
+
     -- Editorconfig file support
     use 'gpanders/editorconfig.nvim'
     --< Editor behaviour
