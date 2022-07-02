@@ -53,6 +53,17 @@ return require('packer').startup(function(use)
         'williamboman/nvim-lsp-installer',
         'neovim/nvim-lspconfig',
     }
+    -- Autocompletition
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/nvim-cmp'
+
+    -- Snippet engine with cmp support
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
+
     -- Editorconfig file support
     use 'gpanders/editorconfig.nvim'
     --< Editor behaviour

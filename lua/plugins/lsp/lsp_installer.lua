@@ -18,8 +18,8 @@ lsp_installer.setup {
     }
 }
 
-local status_ok, lspconfig = pcall(require, "lspconfig")
-if not status_ok then
+local lsp_status_ok, lspconfig = pcall(require, "lspconfig")
+if not lsp_status_ok then
     print 'Lsp config not loaded'
     return
 end
@@ -28,7 +28,7 @@ end
 for _, server in pairs(servers_config.servers) do
     local opts = {
         on_attach = servers_config.on_attach,
-        -- capabilities = servers_config.capabilities,
+        capabilities = servers_config.capabilities,
         flags = servers_config.lsp_flags,
     }
     local has_custom_opts, server_custom_opts = pcall(require, "plugins.lsp.ls_config." .. server)
