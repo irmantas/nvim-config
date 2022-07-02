@@ -73,6 +73,9 @@ return require('packer').startup(function(use)
     -- Comments plugin with treesitter support
     use 'numToStr/Comment.nvim'
 
+    -- Show indentation lines
+    use "lukas-reineke/indent-blankline.nvim"
+
     -- Editorconfig file support
     use 'gpanders/editorconfig.nvim'
     --< Editor behaviour

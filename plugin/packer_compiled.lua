@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/irmantas/.local/share/nvim/site/pack/packer/start/gruvbox-baby",
     url = "https://github.com/luisiacc/gruvbox-baby"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/irmantas/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/irmantas/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
