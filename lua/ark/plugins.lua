@@ -79,6 +79,9 @@ return require('packer').startup(function(use)
     -- Better status line
     use 'nvim-lualine/lualine.nvim'
 
+    -- Autosave
+    use 'Pocco81/AutoSave.nvim'
+
     -- Editorconfig file support
     use 'gpanders/editorconfig.nvim'
     --< Editor behaviour
