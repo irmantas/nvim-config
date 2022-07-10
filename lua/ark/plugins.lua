@@ -83,6 +83,9 @@ return require('packer').startup(function(use)
     -- Autosave
     use 'Pocco81/AutoSave.nvim'
 
+    -- Guess indentation in files
+    use 'Darazaki/indent-o-matic'
+
     -- Editorconfig file support
     use 'gpanders/editorconfig.nvim'
     --< Editor behaviour

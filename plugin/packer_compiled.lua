@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/irmantas/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["indent-o-matic"] = {
+    loaded = true,
+    path = "/home/irmantas/.local/share/nvim/site/pack/packer/start/indent-o-matic",
+    url = "https://github.com/Darazaki/indent-o-matic"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/irmantas/.local/share/nvim/site/pack/packer/start/lualine.nvim",
