@@ -53,6 +53,7 @@ return require('packer').startup(function(use)
         'williamboman/nvim-lsp-installer',
         'neovim/nvim-lspconfig',
     }
+    use 'jose-elias-alvarez/null-ls.nvim'
     -- Autocompletition
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'

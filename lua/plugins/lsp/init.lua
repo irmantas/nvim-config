@@ -5,3 +5,4 @@ if not status_ok then
 end
 
 require 'plugins.lsp.lsp_installer'
+require 'plugins.lsp.null-ls'
