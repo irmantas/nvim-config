@@ -79,6 +79,8 @@ return require('packer').startup(function(use)
 
     -- Better status line
     use 'nvim-lualine/lualine.nvim'
+    -- Editor tabs
+    use 'akinsho/bufferline.nvim'
 
     -- Autosave
     use 'Pocco81/AutoSave.nvim'
