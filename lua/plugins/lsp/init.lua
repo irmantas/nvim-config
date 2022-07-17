@@ -4,5 +4,7 @@ if not status_ok then
     return
 end
 
+vim.diagnostic.config({virtual_text = false})
+
 require 'plugins.lsp.lsp_installer'
 require 'plugins.lsp.null-ls'
