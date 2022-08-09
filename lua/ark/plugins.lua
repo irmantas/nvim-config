@@ -83,7 +83,7 @@ return require('packer').startup(function(use)
     use 'akinsho/bufferline.nvim'
 
     -- Autosave
-    use 'Pocco81/AutoSave.nvim'
+    use 'pocco81/auto-save.nvim'
 
     -- Guess indentation in files
     use 'Darazaki/indent-o-matic'
