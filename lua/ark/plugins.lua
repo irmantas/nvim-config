@@ -41,6 +41,8 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    -- sticky scroll (sticks function)
+    use 'nvim-treesitter/nvim-treesitter-context'
     -- File explorer
     use 'kyazdani42/nvim-tree.lua'
     -- Telescope for file finging
